@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block somescript %}
+<script src="{% static 'JavaScript/form.js' %}" defer></script>
+<link rel="stylesheet" href="{% static 'css/modified.css' %}">
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+{% endblock %}
+{% block title %} Item information {% endblock %}
+{% block content %}
+<div id="container">
+    
+    <div id="left">
+        {%if info %}
+            <h1><span id="item-titleinfo">{{info.item.title}}</span></h1>
+            <div><img id="imageinfo" src="{{ info.item.preview.url  }}"></div>
+            <div id="item-detailsinfo">
+                <span id="description">{{info.des_sizes}}</span>
+                <span id="pageReload" style="color:#6097b2">{{info.id}}</span>
+                
+                
+                
+                <div class="cart">
+                    <span id="price">{{info.price}} $</span>
+                    <button id="buttonorder" class="orderItem">Order</button>
+                    <input type="number" id="numberOfItems">
+                    <button id="buttonorder">Add to Cart</button>
+                </div>
+                <div class="form">
+                    <div class="register">
+                        <form>
+                            <label for="text" style="font-size:20px;margin-left: 10px;">First Name:</label>
+                            <input type="text" id="firstName">
+                            <ul id="theFirst"></ul>
+                            <pre>
+                            </pre>
+                            <label for="secondName" style="font-size:20px;margin-left: 10px;">Second Name:</label>
+                            <input type="text" id="secondName" required>
+                            <ul id="theSecond"></ul>
+                            <pre>
+                            </pre>
+                            <label for="email" style="font-size:20px; margin-left: 10px;">Email:</label>
+                            <input type="email" class="email" required>
+                            <ul id="theEmail"></ul>
+                            <pre>
+                            </pre>
+                            <label for="address" style="font-size:20px;margin-left: 10px;">Address:</label>
+                            <input type="text" class="address" required>
+                            <h4 id="theAddress"></h4>
+                            <pre>
+                            </pre>
+                            
+                        </form>
+                    </div>
+                    <div class="pay">
+                        <h1 style="font-size:2rem; color:#f5dd5d; margin-bottom: 20px;font-style: italic;margin-top: 10px;">How would you want to pay?</h1>
+                        <pre></pre>
+                        <h2 id="Merge"><input type="radio" name="radio" id="payment" value="Mpesa" style="margin-left: 40pxpx; font-size: 2rem;display: block;">M-pesa</h2>
+                        <pre></pre>
+                        <h2 id="Merge"><input type="radio" name="radio" id="payment" value="MTN">MTN</h2>
+                        <pre></pre>
+                        <h2 id="Merge"><input type="radio" name="radio" id="payment" value="KCBBank">KCB Bank</h2>
+                    </div>
+                    <div class="code">
+                        <h2>Enter your phone number here</h2>
+                        <input type="number" id="code">
+                    </div>
+                    <h2 class="amount" style="margin-bottom:20px"></h2>
+                    <button id="concel">Concel</button>
+                    <button type="submit" id="submit">Register</button>
+                </div>
+                
+            </div>
+    
+    
+        {% else %}
+            <h1>No image is currently on sale</h1>
+    {% endif %}
+    <pre>
+        
+    </pre>
+    <a href="{% url 'index' %}" id="back">Go Back</a>
+    </div>
+<div id="right">
+    <div class="abroadsheeping">
+        <h1 id="info-title">Sheeping from abroad</h1>
+        <pre>
+
+        </pre>
+        <p>Hello customers! we are very thrilled to let you know that abroad sheeping of 
+            any type of product is charged according to where and how emergent it is. 
+            That is the same reason why we urge to you to always mention all your details
+             including your contacts just in case we might need to communicate with you.</p>
+
+        <p>We would also love to inform you that all your infromation and credentials are 
+            private and we are not sharing theym with anyone. However, if you don't provide 
+            them, we will not be able to deliver them to you. therefore, you should take blame if 
+            you order something and don't get it, first check wehther you have filled with riquired information </p>
+    </div>
+    <div class="localsheeping">
+        <h1 id="info-title">Inside of the country</h1>
+        <pre>
+
+        </pre>
+        <p>To you niggas who are buying things this country, we would also love to let you know that, sheeping is charged per meter
+            from where delivery station is to your exact home location. Amongst all your detail introduction, please do include first and last number
+            home number, email and possibly your alternative contact just in case we were not able to reach out to you.
+        </p>
+        <pre>
+
+        </pre>
+        <h2>Acknowldgements</h2>
+        <pre>
+
+        </pre>
+        <p>We would finally love to wholeheartedfully thank each and everyone who is part of RajaCompany,
+            you know you're the reason why all of this is happening. In case of doubts, problems or question,
+            you can always use the contact provided in the above section. Thank you and stay safe.
+        </p>
+    </div>
+
+   
+</div>
+
+</div>
+{% endblock %}
+

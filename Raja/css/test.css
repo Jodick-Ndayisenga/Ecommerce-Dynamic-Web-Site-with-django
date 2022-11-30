@@ -1,0 +1,48 @@
+#description{
+    color: #fff;
+}
+.form{
+    display: none;
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 2px solid green;
+    background-color: rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: 20px;
+    padding: 50px;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 500ms;
+    animation-play-state: paused;
+    
+    
+    
+}
+@keyframes myForm{
+    0%{
+        transform: scale(0,0);
+    }
+    
+    30%{
+        transform: scale(0.3, 0.3);   
+    }
+    60%{
+        transform: scale(0.7, 0.7);   
+    }
+    100%{
+        transform: scale(1, 1);   
+    }
+
+}
+@keyframes myRotation{
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+@keyframes moneyRotate{
+    100%{
+        transform: rotateZ(360deg);
+    }
+}

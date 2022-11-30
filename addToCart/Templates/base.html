@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'JavaScript/java.js' %}" defer></script>
+    <script src="{% static 'JavaScript/java2.js' %}" defer></script>
+    {% block extra_css %}{% endblock %}
+    {% block somescript %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>   
+</head>
+<body>
+    <div class="searchItem">
+        <input class="pt" type="text" name="production">
+        <button class="btn">Search</button>
+    </div>
+    <nav class="nav-bar" id="haso">
+        <div class="Jodick" id="joy">
+            <div>Raja</div>
+            <div>Company</div>
+        </div>
+        <ul>
+            <li><a href="#">dashboard</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">men's clothes</a></li>
+            <li><a href="#">women chothes</a></li>
+            <li><a href="#">watches</a></li>
+            <li><a href="#">boots</a></li>
+            <li><a href="#">utensils</a></li>
+            <li><a href="#">phones</a></li>
+            <li><a href="#">Computer</a></li>
+            <li><a href="#">Earphones</a></li>
+            <li><a href="#">Refurbished</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Beauty</a></li>
+        </ul>
+    </nav>
+   {% block content %}{% endblock %}
+</body>
+</html>

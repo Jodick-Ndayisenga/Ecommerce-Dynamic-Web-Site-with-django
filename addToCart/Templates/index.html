@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home page {% endblock %}
+
+{% block content %}
+        <div class="shop_item">
+            {% for picture in image %}
+            
+                <a href="{% url 'iteminfo'  picture.id  %}">
+                    <div class="item">
+                    
+                        <span class="item-title">{{ picture.title }}</span>
+                        <img class="image" src="{{picture.preview.url}}">
+                        <div class="item-details">
+                            <p class="item-details">{{picture.comments}}</p>
+                        </div>
+                        
+                    </div>
+
+                </a>
+            {% empty %}
+                    <h1>You have not uploaded any file</h1>
+
+            {% endfor %}
+        </div>
+   
+{% endblock %} 
+    <!--div class="item">
+        <span class="item-title">Boot for man</span>
+        <img class="image" src="{% static 'images/yoo.jpeg' %}">
+        <div class="item-details">
+            <span class="price">200$</span>
+            <button class="buttonorder">Order</button>
+            <button class="buttonorder">Add to Cart</button>
+        </div>
+    </!--div-->
